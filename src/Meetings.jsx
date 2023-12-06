@@ -15,7 +15,9 @@ const Meetings = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/meetings')
+    // https://lean-assignment-production.up.railway.app/api/meetings
+    // axios.get('http://localhost:8080/api/meetings')
+    axios.get('https://lean-assignment-production.up.railway.app/api/meetings')
       .then(response => setMeetings(response.data))
       .catch(error => {
         console.error('Error fetching meetings:', error);
@@ -47,7 +49,8 @@ const Meetings = () => {
       formData.append('newDateTime', newDateTime);
 
       await axios.post(
-        `http://localhost:8080/api/meetings/${meetingId}/reschedule`,
+        // `http://localhost:8080/api/meetings/${meetingId}/reschedule`,
+        `https://lean-assignment-production.up.railway.app/api/meetings/${meetingId}/reschedule`,
         formData,
         { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
       );
@@ -66,7 +69,9 @@ const Meetings = () => {
       formData.append('interval', form.interval);
       formData.append('durationInMonths', form.durationInMonths);
       console.log(formData)
-      const response = await axios.post('http://localhost:8080/api/meetings/book-recurring', 
+      const response = await axios.post(
+        // 'http://localhost:8080/api/meetings/book-recurring', 
+        'https://lean-assignment-production.up.railway.app/api/meetings/book-recurring', 
       formData,
       { headers: { 'Content-Type': 'application/x-www-form-urlencoded' }}
       );
