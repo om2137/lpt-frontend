@@ -82,7 +82,7 @@ const Meetings = () => {
 
   return (
     <div className='py-10 px-20 grid grid-cols-5 gap-4'>
-      <h1 className='col-span-5 text-center mb-4'>Meetings</h1>
+      <h1 className='col-span-5 text-center mb-4 text-4xl font-bold'>Meetings</h1>
       <div className='border bg-blue-100 p-4'>
         <div className='mb-4'>
           <h1 className='font-semibold pb-4'>Add Recurring meetings</h1>
