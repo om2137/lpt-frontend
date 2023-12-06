@@ -35,7 +35,10 @@ const Meetings = () => {
 }
   const handleDelete = async (meetingId) => {
     try {
-      await axios.post(`http://localhost:8080/api/meetings/${meetingId}/cancel`);
+      await axios.post(
+        // `http://localhost:8080/api/meetings/${meetingId}/cancel`
+        `https://lean-assignment-production.up.railway.app/api/meetings/${meetingId}/cancel`,
+        );
       console.log('Meeting canceled successfully!');
     } catch (error) {
       console.error('Error deleting meeting:', error);
